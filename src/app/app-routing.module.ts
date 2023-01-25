@@ -7,50 +7,16 @@ import { DirectivesComponent } from './template/directives/directives.component'
 import { SwitchesComponent } from './template/switches/switches.component';
 
 
-const routes: Routes = [ { path: 'template', loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule) }, { path: 'blog', loadChildren: () => import('./template/blog/blog.module').then(m => m.BlogModule) }];
+const routes: Routes =
+[{ path: 'template', loadChildren: () => import('./template/template.module').then(m => m.TemplateModule) },
 
-
-const routes: Routes = [
-  {
-    path: '', 
-     component: BasicosComponent,
-     pathMatch: 'full'
-  },
-
-  {
-    path: 'template/dinamicos', canActivate: [],
-     component: DinamicosComponent,
-     pathMatch: 'full'
-     
-  },
-  
-  {
-    path: 'template/directives',  canActivate: [],
-    component: DirectivesComponent,
-    pathMatch: 'full'
-    
-  },
-  {
-    path: 'template/switches',  canActivate: [],
-    component: SwitchesComponent,
-    pathMatch: 'full'
-    
-  },
-  {
-    path: 'reactive/basicos',  canActivate: [],
-    component: BasicosComponent,
-    pathMatch: 'full'
-    
-  },
-  
-  {
-    path: '**',
-    // component: 
-  }
+{path: 'reactive', loadChildren: () => import('./reactive/reactive.module').then(m => m.ReactiveModule)}
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
