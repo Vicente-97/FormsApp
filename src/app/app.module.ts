@@ -3,8 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { TemplateModule } from './template/template/template.module';
-import { TemplateRoutingModule } from './template/template-routing/template-routing.module';
+import { TemplateModule } from './template/template.module';
+import { ReactiveModule } from './reactive/reactive.module';
+import { SharedModule } from './shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { TemplateRoutingModule } from './template/template-routing/template-rout
     BrowserModule,
     AppRoutingModule,
     TemplateModule,
-    TemplateRoutingModule
+    ReactiveModule,
+    SharedModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -17,7 +17,7 @@ const routes: Routes = [{ path: 'basicos', component: BasicosComponent }, { path
   ],
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forChild(routes)
   ], exports:[
     BasicosComponent,
     DinamicosComponent,

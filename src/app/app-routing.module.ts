@@ -5,12 +5,17 @@ import { BasicosComponent } from './template/basicos/basicos.component';
 import { DinamicosComponent } from './template/dinamicos/dinamicos.component';
 import { DirectivesComponent } from './template/directives/directives.component';
 import { SwitchesComponent } from './template/switches/switches.component';
+import { NonFoundComponent } from './shared/non-found/non-found.component';
+
 
 
 const routes: Routes =
-[{ path: 'template', loadChildren: () => import('./template/template.module').then(m => m.TemplateModule) },
+[{path: '',
+component: BasicosComponent},{ path: 'template', loadChildren: () => import('./template/template.module').then(m => m.TemplateModule) },
 
-{path: 'reactive', loadChildren: () => import('./reactive/reactive.module').then(m => m.ReactiveModule)}
+{path: 'reactive', loadChildren: () => import('./reactive/reactive.module').then(m => m.ReactiveModule)},
+{path: '**',
+component: NonFoundComponent}
 ];
 
 
